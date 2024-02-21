@@ -1,4 +1,4 @@
-import React from "react";
+import { Link } from "react-router-dom";
 
 function Home() {
     return (
@@ -15,10 +15,13 @@ function Home() {
                     <p>Home</p>
                     <p>Books</p>
                 </div>
+                <div>
+                    <button>Register</button>
+                </div>
             </div>
-            <div className="description">
+            {/* <div className="description">
                 <p>Indulge in great knowledge with the help of Kalvium Books.</p>
-            </div>
+            </div> */}
         </footer>
     );
 };

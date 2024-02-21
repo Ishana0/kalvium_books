@@ -1,8 +1,8 @@
 import React from "react";
 import { useForm } from "react-hook-form";
-import "./RegistrationForm.css";
+import "./Registrationform.css";
 
-const RegistrationForm = () => {
+const Registrationform = () => {
     const { register, handleSubmit, formState: { errors, isSubmitSuccessful, isSubmitting } } = useForm();
 
     const onSubmit = async (data) => {
@@ -88,4 +88,4 @@ const RegistrationForm = () => {
     );
 };
 
-export default RegistrationForm;
+export default Registrationform;
