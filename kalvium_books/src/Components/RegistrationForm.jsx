@@ -1,6 +1,5 @@
 import React from "react";
 import { useForm } from "react-hook-form";
-// import "./App.css";
 import "./Registrationform.css";
 
 const Registrationform = () => {
@@ -14,13 +13,13 @@ const Registrationform = () => {
     return (
         <div className='form-container'>
             {isSubmitSuccessful && (
-                <div className="succss-msg-container">
+                <div className="success-msg-container">
                     <span className="success-msg">Registration Successful..!!!!</span>
                 </div>
             )}
-            <form onSubmit={handleSubmit(onSubmit)}>
-                <h1 className="form-title">Create account</h1> 
-                <div>
+            <form onSubmit={handleSubmit(onSubmit)} className="registration-form">
+                <h1 className="form-title">Create Account</h1>
+                <div className="form-group">
                     <input
                         type="text"
                         placeholder="Your Name"
@@ -35,10 +34,11 @@ const Registrationform = () => {
                                 message: "Name cannot exceed 30 characters",
                             },
                         })}
+                        className={`form-input ${errors.name ? 'input-error' : ''}`}
                     />
                     {errors.name && <p className="err">{errors.name.message}</p>}
                 </div>
-                <div>
+                <div className="form-group">
                     <input
                         type="text"
                         placeholder="Your Email"
@@ -49,10 +49,11 @@ const Registrationform = () => {
                                 message: "Invalid email",
                             },
                         })}
+                        className={`form-input ${errors.email ? 'input-error' : ''}`}
                     />
                     {errors.email && <p className="err">{errors.email.message}</p>}
                 </div>
-                <div>
+                <div className="form-group">
                     <input
                         type="password"
                         placeholder="Password"
@@ -67,10 +68,11 @@ const Registrationform = () => {
                                 message: "Password must contain at least one special character",
                             },
                         })}
+                        className={`form-input ${errors.password ? 'input-error' : ''}`}
                     />
                     {errors.password && <p className="err">{errors.password.message}</p>}
                 </div>
-                <div>
+                <div className="form-group">
                     <input
                         id="password"
                         type="password"
@@ -80,6 +82,7 @@ const Registrationform = () => {
                             validate: value =>
                                 value === document.getElementById('password').value || "Passwords do not match",
                         })}
+                        className={`form-input ${errors.repeatPassword ? 'input-error' : ''}`}
                     />
                     {errors.repeatPassword && <p className="err">{errors.repeatPassword.message}</p>}
                 </div>

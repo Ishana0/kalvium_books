@@ -10,7 +10,7 @@ function AllRoutes() {
                 <Route path="/form" element={<Registrationform />} />
             </Routes>
         </>
-    )
-}
+    );
+};
 
 export default AllRoutes;

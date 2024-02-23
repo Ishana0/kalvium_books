@@ -1,28 +1,37 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
+import Books from "./Books";
 
 function Home() {
-    return (
-        <footer>
-            <div className="container">
-                <div>
-                    <Link to="/">
-                        <img src="https://kalvium.community/images/sidebar-3d-logo.svg" alt="logo" />
-                    </Link>
-                </div>
+    const [searchInput, setSearchInput] = useState("");
 
-                <h1>Kalvium Books</h1>
-                <div>
-                    <p>Home</p>
-                    <p>Books</p>
+    const handleSearch = (e) => {
+        setSearchInput(e.target.value)
+    };
+
+    return (
+        <>
+            <nav className="navbar">
+                <div className="container">
+                    <div className="logo-container">
+                            <Link to="/">
+                                <img src="https://kalvium.community/images/sidebar-3d-logo.svg" alt="logo" />
+                            </Link>
+                        <h1 className="title">Kalvium Books</h1>
+                    </div>
+                    <div className="search">
+                        <input type="text" placeholder="Search Books" value={searchInput} onChange={handleSearch} />
+                    </div>
+                    <div className="register-btn">
+                        <Link to="/form">
+                            <button>Register</button>
+                        </Link>
+                    </div>
                 </div>
-                <div>
-                    <button>Register</button>
-                </div>
-            </div>
-            {/* <div className="description">
-                <p>Indulge in great knowledge with the help of Kalvium Books.</p>
-            </div> */}
-        </footer>
+            </nav>
+            <Books searchInput={searchInput} />
+        </>
+
     );
 };
 
