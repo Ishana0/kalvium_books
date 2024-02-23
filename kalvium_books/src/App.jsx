@@ -6,7 +6,7 @@ function App() {
 
   return (
     <>
-      <AllRoutes />
+      <AllRoutes /> {/* Rendering the Allroutes component */}
     </>
   );
 };

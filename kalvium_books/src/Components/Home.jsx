@@ -1,12 +1,13 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link } from "react-router-dom"; // Importing Link component from react-router-dom
 import Books from "./Books";
 
 function Home() {
-    const [searchInput, setSearchInput] = useState("");
+    const [searchInput, setSearchInput] = useState(""); // State to store search input
 
+    // Function to handle search input change
     const handleSearch = (e) => {
-        setSearchInput(e.target.value)
+        setSearchInput(e.target.value) // Updating search input state
     };
 
     return (
@@ -23,12 +24,14 @@ function Home() {
                         <input type="text" placeholder="Search Books" value={searchInput} onChange={handleSearch} />
                     </div>
                     <div className="register-btn">
+                        {/* Link to the registration form */}
                         <Link to="/form">
-                            <button>Register</button>
+                            <button>Register</button> {/* Button to navigate to registration form */}
                         </Link>
                     </div>
                 </div>
             </nav>
+            {/* Displaying books component with search input passed as prop */}
             <Books searchInput={searchInput} />
         </>
 

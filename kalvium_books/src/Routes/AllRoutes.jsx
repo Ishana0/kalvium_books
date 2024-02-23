@@ -6,8 +6,8 @@ function AllRoutes() {
     return (
         <>
             <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/form" element={<Registrationform />} />
+                <Route path="/" element={<Home />} /> {/* Defining a route for the Home component */}
+                <Route path="/form" element={<Registrationform />} /> {/* Defining a route for the Registrationform component */}
             </Routes>
         </>
     );
